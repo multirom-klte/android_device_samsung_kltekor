@@ -1,22 +1,15 @@
-TARGET_OTA_ASSERT_DEVICE := klte,kltekor,kltektt,kltelgt,klteskt
-
-# Kernel
-TARGET_PREBUILT_KERNEL := device/samsung/kltekor/zImage
-TARGET_PREBUILT_DTB := device/samsung/kltekor/dtb.img
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8974
-TARGET_LIBINIT_MSM8974_DEFINES_FILE := device/samsung/kltekor/init/init_kltekor.cpp
-
 # inherit from common klte
 -include device/samsung/klte-common/BoardConfigCommon.mk
 
-# Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
-BOARD_CACHEIMAGE_PARTITION_SIZE := 524288000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15728640
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2548039680
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12442369024 # 12442385408 - 16384
+# kernel
+TARGET_PREBUILT_KERNEL := device/samsung/klteskt/zImage
+TARGET_PREBUILT_DTB := device/samsung/klteskt/dtb.img
+
+# Init properties from bootloader version, ex. model info
+TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_klteskt
+TARGET_RECOVERY_DEVICE_MODULES := libinit_klteskt
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/klteskt/init/init_klteskt.cpp
 
 # Asian region language support
 TW_EXTRA_LANGUAGES := true
